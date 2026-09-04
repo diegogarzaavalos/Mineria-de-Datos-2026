@@ -14,11 +14,11 @@ Repositorio de prácticas y proyecto integrador (PIA) de la materia **Minería d
 
 | Requisito | Detalle |
 |-----------|---------|
-| Variables | 12 (dataset limpio) |
-| Numéricas | `ID`, `positive_reviews`, `negative_reviews`, `all_time_peak` |
+| Variables | 14 (tras Práctica 2) |
+| Numéricas | `ID`, `positive_reviews`, `negative_reviews`, `all_time_peak`, `total_reviews`, `review_positive_percentage` |
 | Categóricas / texto | `game`, `primary_genre`, `store_genres`, `publisher`, `developer`, `detected_technologies` |
 | Fechas | `release`, `all_time_peak_date` |
-| Filas | 59,775 (tras limpieza) |
+| Filas | 59,775 |
 | Archivo único | `dataset/game_data_clean.csv` |
 
 ### Archivos del dataset
@@ -26,7 +26,9 @@ Repositorio de prácticas y proyecto integrador (PIA) de la materia **Minería d
 | Archivo | Descripción |
 |---------|-------------|
 | `dataset/game_data_all.csv` | Dataset original descargado de Kaggle |
-| `dataset/game_data_clean.csv` | Dataset limpio generado en la Práctica 1 |
+| `dataset/game_data_clean.csv` | Dataset limpio (P1) enriquecido en P2 con `total_reviews` y `review_positive_percentage` |
+
+`release` se mantiene como **fecha completa**. El año de análisis se obtiene en código con `release.dt.year` (no se guarda una columna `release_year`).
 
 ## Estructura del repositorio
 
@@ -37,8 +39,16 @@ Mineria-de-Datos-2026/
 │   └── game_data_clean.csv
 ├── Practica 1/
 │   └── limpieza_dataset.py
+├── Practica 2/
+│   ├── estadistica_descriptiva.py
+│   └── ERD Steam Releases.pdf
+├── changelog.txt
 └── README.md
 ```
+
+## Línea de análisis
+
+Reseñas (positivas, negativas, total y proporción positiva) según el **año de lanzamiento** y el **género principal**, contrastando tops de publishers/developers por **popularidad** (suma de reseñas) vs **productividad** (cantidad de juegos).
 
 ## Práctica 1 — Limpieza de Datos
 
@@ -52,7 +62,7 @@ Mineria-de-Datos-2026/
 - Validación de valores negativos en variables numéricas
 - Revisión de fechas de pico anteriores al lanzamiento (early access)
 - Estandarización de valores en `primary_genre`
-- Exportación del dataset limpio
+- Exportación del dataset limpio (12 columnas)
 
 **Ejecución:**
 
@@ -62,12 +72,36 @@ python "Practica 1/limpieza_dataset.py"
 
 **Dependencias:** `pandas`
 
+## Práctica 2 — Estadística Descriptiva
+
+**Script:** `Practica 2/estadistica_descriptiva.py`  
+**Diagrama:** `Practica 2/ERD Steam Releases.pdf`  
+**Dataset:** lee y actualiza `dataset/game_data_clean.csv`
+
+**Acciones realizadas:**
+- Columnas derivadas persistidas en el CSV: `total_reviews`, `review_positive_percentage`
+- Año de lanzamiento vía `release.dt.year` (sin columna `release_year`)
+- Estadística descriptiva de variables numéricas (incluye medianas)
+- Frecuencias y porcentajes de `primary_genre`
+- Conteo de lanzamientos por año de `release`
+- Métricas agrupadas por año × género principal
+- Tops de publisher y developer por suma de reseñas y por cantidad de juegos
+- Identificación de entidades y relaciones (ERD)
+
+**Ejecución:**
+
+```bash
+python "Practica 2/estadistica_descriptiva.py"
+```
+
+**Dependencias:** `pandas`
+
 ## Prácticas
 
 | Práctica | Tema | Estado |
 |----------|------|--------|
 | 1 | Limpieza de Datos | ✅ Completada |
-| 2 | Estadística Descriptiva | ⏳ Pendiente |
+| 2 | Estadística Descriptiva | ✅ Completada |
 | 3 | Visualización de Datos | ⏳ Pendiente |
 | 4 | Pruebas Estadísticas | ⏳ Pendiente |
 | 5 | Modelos Lineales y Correlación | ⏳ Pendiente |

@@ -45,3 +45,24 @@ Cambio: Actualizar el conteo de variables (11 → 12), incluir `ID` en las numé
 Justificación: El README debía coincidir con el dataset limpio tras conservar el identificador original.
 
 --------------------------------------------------------------------------------
+
+[2026-09-04 16:05 -0600]
+Archivo(s): Practica 2/estadistica_descriptiva.py, Practica 2/ERD Steam Releases.pdf
+Cambio: Agregar la Práctica 2 (estadística descriptiva): script con descriptiva, frecuencias de primary_genre, lanzamientos por año, agrupado año×género, tops de publisher/developer (suma de reviews y n de juegos), justificación en comentarios, y diagrama ERD.
+Justificación: Cumplir el entregable de Semana 5 (descriptiva, entidades/relaciones con diagrama y métricas agrupadas) y fijar la línea de análisis (reseñas en el tiempo por género; popularidad vs productividad).
+
+--------------------------------------------------------------------------------
+
+[2026-09-04 16:10 -0600]
+Archivo(s): Practica 2/estadistica_descriptiva.py, dataset/game_data_clean.csv, README.md
+Cambio: Persistir en `game_data_clean.csv` las columnas `total_reviews` y `review_positive_percentage`; el año se obtiene con `release.dt.year` sin crear ni guardar `release_year`; actualizar README (14 variables).
+Justificación: Reutilizar en prácticas siguientes las métricas de reseñas ya calculadas, sin redundancia temporal (se conserva la fecha completa de `release`) y sin duplicar el dataset en otro archivo.
+
+--------------------------------------------------------------------------------
+
+[2026-09-04 16:25 -0600]
+Archivo(s): Practica 2/estadistica_descriptiva.py
+Cambio: Añadir bloques de comentario con hallazgos tras cada análisis (media vs mediana, cola a la derecha, popularidad vs productividad).
+Justificación: Documentar en el script la interpretación estadística del entregable, al estilo de la Práctica 1.
+
+--------------------------------------------------------------------------------
