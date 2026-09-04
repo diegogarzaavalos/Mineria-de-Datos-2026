@@ -14,8 +14,8 @@ Repositorio de prácticas y proyecto integrador (PIA) de la materia **Minería d
 
 | Requisito | Detalle |
 |-----------|---------|
-| Variables | 11 (dataset limpio) |
-| Numéricas | `positive_reviews`, `negative_reviews`, `all_time_peak` |
+| Variables | 12 (dataset limpio) |
+| Numéricas | `ID`, `positive_reviews`, `negative_reviews`, `all_time_peak` |
 | Categóricas / texto | `game`, `primary_genre`, `store_genres`, `publisher`, `developer`, `detected_technologies` |
 | Fechas | `release`, `all_time_peak_date` |
 | Filas | 59,775 (tras limpieza) |
@@ -36,15 +36,16 @@ Mineria-de-Datos-2026/
 │   ├── game_data_all.csv
 │   └── game_data_clean.csv
 ├── Practica 1/
-│   └── Practica 1.py
+│   └── limpieza_dataset.py
 └── README.md
 ```
 
 ## Práctica 1 — Limpieza de Datos
 
-**Script:** `Practica 1/Practica 1.py`
+**Script:** `Practica 1/limpieza_dataset.py`
 
 **Acciones realizadas:**
+- Renombrado de `Unnamed: 0` a `ID` (identificador único de cada registro)
 - Eliminación de columnas redundantes o no relevantes para el análisis
 - Detección y eliminación de valores nulos
 - Conversión de `release` y `all_time_peak_date` a tipo fecha
@@ -56,7 +57,7 @@ Mineria-de-Datos-2026/
 **Ejecución:**
 
 ```bash
-python "Practica 1/Practica 1.py"
+python "Practica 1/limpieza_dataset.py"
 ```
 
 **Dependencias:** `pandas`

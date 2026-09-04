@@ -10,9 +10,11 @@ print(df.shape)
 print("\nColumnas:")
 print(df.columns)
 
+#renombrar Unnamed: 0 a ID para usarlo como identificador del registro
+df = df.rename(columns={"Unnamed: 0": "ID"})
+
 #eliminar las columnas que no son relevantes
 """
-* Unnamed: 0: índice
 * link: enlace request a la página de Steam
 * peak_players: redundante con "all_time_peak"
 * total_reviews: es la suma de las reviews positivas y negativas
@@ -23,7 +25,6 @@ print(df.columns)
 * 24_hour_peak: jugadores en línea en las últimas 24 horas en el momento de la consulta de creación del dataset
 """
 df = df.drop(columns=[
-    "Unnamed: 0",
     "link",
     "peak_players",
     "total_reviews",
@@ -54,6 +55,10 @@ print(nulos)
 
 #eliminar los valores nulos
 df = df.dropna()
+"""
+Se eliminan valores nulos para facilitar la limpieza del dataset.
+Se mantienen suficientes datos para el analisis.
+"""
 
 #mostrar el número de filas y columnas del dataset despues de eliminar los valores nulos
 print("\nNúmero de filas despues de eliminar los valores nulos:")
@@ -69,8 +74,9 @@ df["all_time_peak_date"] = pd.to_datetime(df["all_time_peak_date"])
 #mostrar información del dataset despues de convertir release y all_time_peak_date a datetime
 df.info()
 """
-Hay 59775 registros y 11 columnas
-Las variables numericas son(3):
+Hay 59775 registros y 12 columnas
+Las variables numericas son(4):
+* ID: identificador del registro
 * positive_reviews: reviews positivas
 * negative_reviews: reviews negativas
 * all_time_peak: maximo de jugadores en línea

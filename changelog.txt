@@ -1,0 +1,47 @@
+CHANGELOG
+=========
+Registro de cambios del repositorio Minería de Datos 2026.
+Cada entrada incluye fecha exacta, descripción del cambio y su justificación.
+
+Formato:
+[YYYY-MM-DD HH:MM TZ]
+Archivo(s): ...
+Cambio: ...
+Justificación: ...
+
+--------------------------------------------------------------------------------
+
+[2026-08-25 22:21 -0600]
+Archivo(s): repositorio
+Cambio: Commit inicial del proyecto.
+Justificación: Establecer la base del repositorio para las prácticas y el PIA de Minería de Datos.
+
+--------------------------------------------------------------------------------
+
+[2026-08-25 22:25 -0600]
+Archivo(s): README.md
+Cambio: Documentar el dataset Steam Releases, requisitos del curso y estructura de prácticas.
+Justificación: Dejar claro el origen de los datos, las variables usadas y el avance de cada práctica.
+
+--------------------------------------------------------------------------------
+
+[2026-08-27 18:13 -0600]
+Archivo(s): Practica 1/Limpieza_dataset.py, dataset/game_data_clean.csv
+Cambio: Agregar la Práctica 1: script de limpieza del dataset Steam Releases y generación del CSV limpio.
+Justificación: Preparar un dataset analizable (sin nulos ni columnas irrelevantes, con tipos correctos) para las prácticas posteriores.
+
+--------------------------------------------------------------------------------
+
+[2026-09-04 15:00 -0600]
+Archivo(s): Practica 1/Limpieza_dataset.py
+Cambio: Conservar la columna "Unnamed: 0" y renombrarla a "ID" en lugar de eliminarla.
+Justificación: El índice original del dataset sirve como identificador único de cada registro. Eliminarlo impedía referenciar filas de forma estable en análisis posteriores (estadística descriptiva, joins o trazabilidad con el CSV original).
+
+--------------------------------------------------------------------------------
+
+[2026-09-04 15:03 -0600]
+Archivo(s): README.md
+Cambio: Actualizar el conteo de variables (11 → 12), incluir `ID` en las numéricas y documentar el renombrado de `Unnamed: 0` a `ID` en la Práctica 1.
+Justificación: El README debía coincidir con el dataset limpio tras conservar el identificador original.
+
+--------------------------------------------------------------------------------
