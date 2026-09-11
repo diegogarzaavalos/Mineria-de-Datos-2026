@@ -66,3 +66,10 @@ Cambio: Añadir bloques de comentario con hallazgos tras cada análisis (media v
 Justificación: Documentar en el script la interpretación estadística del entregable, al estilo de la Práctica 1.
 
 --------------------------------------------------------------------------------
+
+[2026-09-11 15:03 -0600]
+Archivo(s): Practica 3/visualizacion_datos.py, README.md, changelog.txt
+Cambio: Agregar la Práctica 3 (visualización): 8 figuras y 5 tipos (pastel, boxplot, líneas, dispersión, barras) con ciclo en tops de publisher/developer; comentarios de análisis; actualizar README (P3 completada y estructura del repo).
+Justificación: Cumplir el entregable de Semana 6 (≥5 tipos de gráficas con automatización) visualizando la línea de análisis de P2 (género, tiempo, reviews vs peak, popularidad vs productividad).
+
+--------------------------------------------------------------------------------

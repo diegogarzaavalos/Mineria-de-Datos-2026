@@ -14,7 +14,7 @@ Repositorio de prácticas y proyecto integrador (PIA) de la materia **Minería d
 
 | Requisito | Detalle |
 |-----------|---------|
-| Variables | 14 (tras Práctica 2) |
+| Variables | 14 (tras Práctica 2; P3 las recalcula en memoria si faltan) |
 | Numéricas | `ID`, `positive_reviews`, `negative_reviews`, `all_time_peak`, `total_reviews`, `review_positive_percentage` |
 | Categóricas / texto | `game`, `primary_genre`, `store_genres`, `publisher`, `developer`, `detected_technologies` |
 | Fechas | `release`, `all_time_peak_date` |
@@ -26,7 +26,7 @@ Repositorio de prácticas y proyecto integrador (PIA) de la materia **Minería d
 | Archivo | Descripción |
 |---------|-------------|
 | `dataset/game_data_all.csv` | Dataset original descargado de Kaggle |
-| `dataset/game_data_clean.csv` | Dataset limpio (P1) enriquecido en P2 con `total_reviews` y `review_positive_percentage` |
+| `dataset/game_data_clean.csv` | Dataset limpio (P1); P2 puede enriquecerlo con `total_reviews` y `review_positive_percentage` |
 
 `release` se mantiene como **fecha completa**. El año de análisis se obtiene en código con `release.dt.year` (no se guarda una columna `release_year`).
 
@@ -42,6 +42,8 @@ Mineria-de-Datos-2026/
 ├── Practica 2/
 │   ├── estadistica_descriptiva.py
 │   └── ERD Steam Releases.pdf
+├── Practica 3/
+│   └── visualizacion_datos.py
 ├── changelog.txt
 └── README.md
 ```
@@ -96,13 +98,38 @@ python "Practica 2/estadistica_descriptiva.py"
 
 **Dependencias:** `pandas`
 
+## Práctica 3 — Visualización de Datos
+
+**Script:** `Practica 3/visualizacion_datos.py`  
+**Dataset:** `dataset/game_data_clean.csv` (recalcula derivadas si no están en el CSV)
+
+**8 figuras · 5 tipos** (con ciclo en rankings de barras):
+
+| Orden | Tipo | Contenido |
+|-------|------|-----------|
+| 1 | Pastel | Top 8 `primary_genre` + Otros |
+| 2 | Boxplot | `% positivo` por los mismos top 8 géneros |
+| 3 | Líneas | Lanzamientos por año de `release` (eje Y log) |
+| 4 | Dispersión | `total_reviews` vs `all_time_peak` (escala log-log) |
+| 5–8 | Barras | Top 15 publishers/developers × (suma reviews \| n juegos) |
+
+Comentarios de análisis tras cada bloque (composición del catálogo, recepción por género, oferta temporal, asociación reviews–peak, popularidad vs productividad).
+
+**Ejecución:**
+
+```bash
+python "Practica 3/visualizacion_datos.py"
+```
+
+**Dependencias:** `pandas`, `matplotlib`, `seaborn`
+
 ## Prácticas
 
 | Práctica | Tema | Estado |
 |----------|------|--------|
 | 1 | Limpieza de Datos | ✅ Completada |
 | 2 | Estadística Descriptiva | ✅ Completada |
-| 3 | Visualización de Datos | ⏳ Pendiente |
+| 3 | Visualización de Datos | ✅ Completada |
 | 4 | Pruebas Estadísticas | ⏳ Pendiente |
 | 5 | Modelos Lineales y Correlación | ⏳ Pendiente |
 | 6 | Clasificación KNN | ⏳ Pendiente |
