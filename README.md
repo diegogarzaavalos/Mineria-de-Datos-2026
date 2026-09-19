@@ -44,6 +44,8 @@ Mineria-de-Datos-2026/
 │   └── ERD Steam Releases.pdf
 ├── Practica 3/
 │   └── visualizacion_datos.py
+├── Practica 4/
+│   └── pruebas_estadisticas.py
 ├── changelog.txt
 └── README.md
 ```
@@ -123,6 +125,31 @@ python "Practica 3/visualizacion_datos.py"
 
 **Dependencias:** `pandas`, `matplotlib`, `seaborn`
 
+## Práctica 4 — Pruebas Estadísticas
+
+**Script:** `Practica 4/pruebas_estadisticas.py`  
+**Dataset:** `dataset/game_data_clean.csv`
+
+**Diseño de la prueba:**
+- Grupos: top 8 `primary_genre` (coherente con P3)
+- Variable: `review_positive_percentage`
+- α = 0.05
+
+**Acciones realizadas:**
+- Resumen por género (n, mediana, media)
+- Revisión de supuestos (Levene, Shapiro orientativo) → se elige **Kruskal-Wallis** (no ANOVA)
+- Kruskal-Wallis global (diferencias entre géneros)
+- Post-hoc: Mann-Whitney por pares con corrección de Bonferroni
+- Comentarios de justificación metodológica e interpretación de p-values
+
+**Ejecución:**
+
+```bash
+python "Practica 4/pruebas_estadisticas.py"
+```
+
+**Dependencias:** `pandas`, `numpy`, `scipy`
+
 ## Prácticas
 
 | Práctica | Tema | Estado |
@@ -130,7 +157,7 @@ python "Practica 3/visualizacion_datos.py"
 | 1 | Limpieza de Datos | ✅ Completada |
 | 2 | Estadística Descriptiva | ✅ Completada |
 | 3 | Visualización de Datos | ✅ Completada |
-| 4 | Pruebas Estadísticas | ⏳ Pendiente |
+| 4 | Pruebas Estadísticas | ✅ Completada |
 | 5 | Modelos Lineales y Correlación | ⏳ Pendiente |
 | 6 | Clasificación KNN | ⏳ Pendiente |
 | 7 | Clustering K-Means | ⏳ Pendiente |

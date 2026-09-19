@@ -73,3 +73,10 @@ Cambio: Agregar la Práctica 3 (visualización): 8 figuras y 5 tipos (pastel, bo
 Justificación: Cumplir el entregable de Semana 6 (≥5 tipos de gráficas con automatización) visualizando la línea de análisis de P2 (género, tiempo, reviews vs peak, popularidad vs productividad).
 
 --------------------------------------------------------------------------------
+
+[2026-09-19 11:29 -0600]
+Archivo(s): Practica 4/pruebas_estadisticas.py, README.md, changelog.txt
+Cambio: Agregar la Práctica 4 (pruebas estadísticas): Kruskal-Wallis sobre % positivo por top 8 primary_genre (α=0.05), supuestos (Levene/Shapiro), post-hoc Mann-Whitney con Bonferroni; actualizar README (P4 completada).
+Justificación: Cumplir el entregable de Semana 7 (diferencias en datos etiquetados) con un test no paramétrico justificado por los supuestos incumplidos para ANOVA.
+
+--------------------------------------------------------------------------------
