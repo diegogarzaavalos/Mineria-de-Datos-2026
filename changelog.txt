@@ -80,3 +80,10 @@ Cambio: Agregar la Práctica 4 (pruebas estadísticas): Kruskal-Wallis sobre % p
 Justificación: Cumplir el entregable de Semana 7 (diferencias en datos etiquetados) con un test no paramétrico justificado por los supuestos incumplidos para ANOVA.
 
 --------------------------------------------------------------------------------
+
+[2026-10-07 13:24 -0600]
+Archivo(s): Practica 5/modelos_lineales_y_correlacion.py, README.md, changelog.txt
+Cambio: Documentar la Práctica 5 (modelos lineales): regresión log10(all_time_peak) ~ log10(total_reviews), correlación de Pearson, R², dispersión con recta ajustada y gráfico de residuos; actualizar README (P5 completada y estructura del repo).
+Justificación: Cumplir el entregable de Semana 9 (modelo lineal, gráficas y R²) sobre la relación reviews–pico ya observada en P3, y dejar el repositorio alineado con el script que faltaba en README y changelog.
+
+--------------------------------------------------------------------------------

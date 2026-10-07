@@ -46,6 +46,8 @@ Mineria-de-Datos-2026/
 │   └── visualizacion_datos.py
 ├── Practica 4/
 │   └── pruebas_estadisticas.py
+├── Practica 5/
+│   └── modelos_lineales_y_correlacion.py
 ├── changelog.txt
 └── README.md
 ```
@@ -150,6 +152,28 @@ python "Practica 4/pruebas_estadisticas.py"
 
 **Dependencias:** `pandas`, `numpy`, `scipy`
 
+## Práctica 5 — Modelos Lineales y Correlación
+
+**Script:** `Practica 5/modelos_lineales_y_correlacion.py`  
+**Dataset:** `dataset/game_data_clean.csv`
+
+**Modelo:** `log10(all_time_peak) = a + b · log10(total_reviews)`
+
+**Acciones realizadas:**
+- Ajuste lineal en escala log (la lineal completa aplasta la nube, como en P3)
+- Correlación de Pearson y métrica R²
+- Dispersión con la recta ajustada
+- Gráfico de residuos
+- Comentarios de justificación del ajuste
+
+**Ejecución:**
+
+```bash
+python "Practica 5/modelos_lineales_y_correlacion.py"
+```
+
+**Dependencias:** `pandas`, `numpy`, `matplotlib`, `seaborn`, `scipy`
+
 ## Prácticas
 
 | Práctica | Tema | Estado |
@@ -158,7 +182,7 @@ python "Practica 4/pruebas_estadisticas.py"
 | 2 | Estadística Descriptiva | ✅ Completada |
 | 3 | Visualización de Datos | ✅ Completada |
 | 4 | Pruebas Estadísticas | ✅ Completada |
-| 5 | Modelos Lineales y Correlación | ⏳ Pendiente |
+| 5 | Modelos Lineales y Correlación | ✅ Completada |
 | 6 | Clasificación KNN | ⏳ Pendiente |
 | 7 | Clustering K-Means | ⏳ Pendiente |
 | 8 | Forecasting | ⏳ Pendiente |
