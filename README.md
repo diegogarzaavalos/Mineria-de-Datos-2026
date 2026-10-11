@@ -48,6 +48,8 @@ Mineria-de-Datos-2026/
 │   └── pruebas_estadisticas.py
 ├── Practica 5/
 │   └── modelos_lineales_y_correlacion.py
+├── Practica 6/
+│   └── clasificacion_de_datos.py
 ├── changelog.txt
 └── README.md
 ```
@@ -174,6 +176,31 @@ python "Practica 5/modelos_lineales_y_correlacion.py"
 
 **Dependencias:** `pandas`, `numpy`, `matplotlib`, `seaborn`, `scipy`
 
+## Práctica 6 — Clasificación KNN
+
+**Script:** `Practica 6/clasificacion_de_datos.py`  
+**Dataset:** `dataset/game_data_clean.csv`
+
+**Diseño del modelo:**
+- Clase: top 8 `primary_genre` (misma selección que P3 y P4)
+- Predictores: `log10(total_reviews)`, `log10(all_time_peak)`, `review_positive_percentage`
+- Partición 80/20 con `stratify` y `StandardScaler` ajustado solo en entrenamiento
+- Ciclo de `k` en 5, 11 y 21; se elige el de mayor accuracy en prueba
+
+**Acciones realizadas:**
+- Entrenamiento y evaluación de `KNeighborsClassifier`
+- Accuracy comparada con la clase más frecuente (Indie)
+- Matriz de confusión y heatmap
+- Comentarios de justificación del procedimiento y del resultado
+
+**Ejecución:**
+
+```bash
+python "Practica 6/clasificacion_de_datos.py"
+```
+
+**Dependencias:** `pandas`, `numpy`, `matplotlib`, `seaborn`, `scikit-learn`
+
 ## Prácticas
 
 | Práctica | Tema | Estado |
@@ -183,7 +210,7 @@ python "Practica 5/modelos_lineales_y_correlacion.py"
 | 3 | Visualización de Datos | ✅ Completada |
 | 4 | Pruebas Estadísticas | ✅ Completada |
 | 5 | Modelos Lineales y Correlación | ✅ Completada |
-| 6 | Clasificación KNN | ⏳ Pendiente |
+| 6 | Clasificación KNN | ✅ Completada |
 | 7 | Clustering K-Means | ⏳ Pendiente |
 | 8 | Forecasting | ⏳ Pendiente |
 | 9 | Análisis de Texto | ⏳ Pendiente |

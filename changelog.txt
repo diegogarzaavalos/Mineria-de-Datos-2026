@@ -87,3 +87,10 @@ Cambio: Documentar la Práctica 5 (modelos lineales): regresión log10(all_time_
 Justificación: Cumplir el entregable de Semana 9 (modelo lineal, gráficas y R²) sobre la relación reviews–pico ya observada en P3, y dejar el repositorio alineado con el script que faltaba en README y changelog.
 
 --------------------------------------------------------------------------------
+
+[2026-10-11 15:57 -0600]
+Archivo(s): Practica 6/clasificacion_de_datos.py, README.md, changelog.txt
+Cambio: Agregar la Práctica 6 (clasificación KNN): predecir el top 8 de primary_genre con log de reseñas, log de pico y % positivo; ciclo de k (5, 11, 21), accuracy, matriz de confusión y comentarios; actualizar README (P6 completada).
+Justificación: Cumplir el entregable de Semana 10 (modelo KNN y evaluación) y documentar que estas tres variables no separan bien el género frente a la clase más frecuente.
+
+--------------------------------------------------------------------------------
