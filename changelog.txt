@@ -94,3 +94,10 @@ Cambio: Agregar la Práctica 6 (clasificación KNN): predecir el top 8 de primar
 Justificación: Cumplir el entregable de Semana 10 (modelo KNN y evaluación) y documentar que estas tres variables no separan bien el género frente a la clase más frecuente.
 
 --------------------------------------------------------------------------------
+
+[2026-10-11 16:01 -0600]
+Archivo(s): Practica 7/agrupamiento_de_datos.py, README.md, changelog.txt
+Cambio: Agregar la Práctica 7 (K-Means): mismas tres variables numéricas de P6, búsqueda de k (2 a 8) por inercia y silhouette, modelo con k=3, centroides y cruce de lectura con primary_genre; actualizar README (P7 completada).
+Justificación: Cumplir el entregable de Semana 12 (agrupamiento y evaluación) sin usar el género como etiqueta, y contrastar con P6 que esas variables agrupan por volumen y recepción, no por género.
+
+--------------------------------------------------------------------------------

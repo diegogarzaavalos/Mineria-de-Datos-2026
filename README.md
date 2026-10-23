@@ -50,6 +50,8 @@ Mineria-de-Datos-2026/
 │   └── modelos_lineales_y_correlacion.py
 ├── Practica 6/
 │   └── clasificacion_de_datos.py
+├── Practica 7/
+│   └── agrupamiento_de_datos.py
 ├── changelog.txt
 └── README.md
 ```
@@ -201,6 +203,31 @@ python "Practica 6/clasificacion_de_datos.py"
 
 **Dependencias:** `pandas`, `numpy`, `matplotlib`, `seaborn`, `scikit-learn`
 
+## Práctica 7 — Agrupamiento K-Means
+
+**Script:** `Practica 7/agrupamiento_de_datos.py`  
+**Dataset:** `dataset/game_data_clean.csv`
+
+**Diseño del modelo:**
+- Variables: `log10(total_reviews)`, `log10(all_time_peak)`, `review_positive_percentage` (sin usar el género)
+- Escalado con `StandardScaler`
+- Ciclo de `k` de 2 a 8: inercia y silhouette (silhouette en muestra de 8,000)
+- `k` elegido = 3
+
+**Acciones realizadas:**
+- Curvas de inercia y silhouette
+- K-Means final, tamaños de grupo y centroides
+- Cruce grupo × top 8 `primary_genre` solo de lectura
+- Comentarios de justificación de `k` y de los perfiles numéricos
+
+**Ejecución:**
+
+```bash
+python "Practica 7/agrupamiento_de_datos.py"
+```
+
+**Dependencias:** `pandas`, `numpy`, `matplotlib`, `seaborn`, `scikit-learn`
+
 ## Prácticas
 
 | Práctica | Tema | Estado |
@@ -211,7 +238,7 @@ python "Practica 6/clasificacion_de_datos.py"
 | 4 | Pruebas Estadísticas | ✅ Completada |
 | 5 | Modelos Lineales y Correlación | ✅ Completada |
 | 6 | Clasificación KNN | ✅ Completada |
-| 7 | Clustering K-Means | ⏳ Pendiente |
+| 7 | Clustering K-Means | ✅ Completada |
 | 8 | Forecasting | ⏳ Pendiente |
 | 9 | Análisis de Texto | ⏳ Pendiente |
 | PIA | Reporte de Inteligencia de Negocios | ⏳ Pendiente |
