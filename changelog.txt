@@ -108,3 +108,10 @@ Cambio: Agregar la Práctica 8 (pronóstico): serie de lanzamientos por año de 
 Justificación: Cumplir el entregable de Semana 13 (regresión/serie de tiempo para datos futuros) a partir de una serie agregada, porque cada fila del CSV es un juego y no un punto temporal.
 
 --------------------------------------------------------------------------------
+
+[2026-11-01 20:52 -0600]
+Archivo(s): Practica 9/analisis_de_texto.py, README.md, changelog.txt
+Cambio: Agregar la Práctica 9 (análisis de texto): EDA y nubes de store_genres y detected_technologies; nube de tecnologías coloreada por prefijo (Engine/SDK/…); barras top-15. Actualizar README (P9 completada).
+Justificación: Cumplir el entregable de Semana 14 (nube de palabras y EDA textual) con los dos corpus útiles del CSV: géneros (impacto en catálogo) y tecnologías (lectura de negocio).
+
+--------------------------------------------------------------------------------

@@ -54,6 +54,8 @@ Mineria-de-Datos-2026/
 │   └── agrupamiento_de_datos.py
 ├── Practica 8/
 │   └── pronostico_forecasting.py
+├── Practica 9/
+│   └── analisis_de_texto.py
 ├── changelog.txt
 └── README.md
 ```
@@ -256,6 +258,31 @@ python "Practica 8/pronostico_forecasting.py"
 
 **Dependencias:** `pandas`, `numpy`, `matplotlib`, `seaborn`, `scipy`
 
+## Práctica 9 — Análisis de Texto
+
+**Script:** `Practica 9/analisis_de_texto.py`  
+**Dataset:** `dataset/game_data_clean.csv`
+
+**Diseño:**
+- Corpus 1: `store_genres` (impacto de cada género en el catálogo)
+- Corpus 2: `detected_technologies` (stack técnico: Engine, SDK, etc.)
+- Nube de tecnologías coloreada por prefijo (`Engine.`, `SDK.`, …)
+- Figuras separadas: nubes a tamaño completo y barras top-15 aparte
+
+**Acciones realizadas:**
+- Tokenización de géneros (sin el id entre paréntesis) y de tecnologías
+- EDA: totales, únicos, top-15 y conteo por prefijo
+- Nubes de palabras + barras horizontales
+- Comentarios de justificación
+
+**Ejecución:**
+
+```bash
+python "Practica 9/analisis_de_texto.py"
+```
+
+**Dependencias:** `pandas`, `matplotlib`, `seaborn`, `wordcloud`
+
 ## Prácticas
 
 | Práctica | Tema | Estado |
@@ -268,5 +295,5 @@ python "Practica 8/pronostico_forecasting.py"
 | 6 | Clasificación KNN | ✅ Completada |
 | 7 | Clustering K-Means | ✅ Completada |
 | 8 | Forecasting | ✅ Completada |
-| 9 | Análisis de Texto | ⏳ Pendiente |
+| 9 | Análisis de Texto | ✅ Completada |
 | PIA | Reporte de Inteligencia de Negocios | ⏳ Pendiente |
