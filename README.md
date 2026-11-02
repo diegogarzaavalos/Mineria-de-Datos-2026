@@ -52,6 +52,8 @@ Mineria-de-Datos-2026/
 │   └── clasificacion_de_datos.py
 ├── Practica 7/
 │   └── agrupamiento_de_datos.py
+├── Practica 8/
+│   └── pronostico_forecasting.py
 ├── changelog.txt
 └── README.md
 ```
@@ -228,6 +230,32 @@ python "Practica 7/agrupamiento_de_datos.py"
 
 **Dependencias:** `pandas`, `numpy`, `matplotlib`, `seaborn`, `scikit-learn`
 
+## Práctica 8 — Pronóstico
+
+**Script:** `Practica 8/pronostico_forecasting.py`  
+**Dataset:** `dataset/game_data_clean.csv`
+
+**Diseño del modelo:**
+- Serie: cantidad de juegos por año de `release`
+- Entrenamiento: 2006–2022 (2023 queda fuera: scrape a mitad de año)
+- Recta: `n_juegos = a + b · año`
+- Pronóstico: 2023, 2024 y 2025
+
+**Acciones realizadas:**
+- Construcción de la serie anual
+- Regresión lineal, pendiente y R²
+- Predicción de años futuros y contraste con el 2023 incompleto
+- Gráfica de observados, recta y pronóstico
+- Comentarios de justificación
+
+**Ejecución:**
+
+```bash
+python "Practica 8/pronostico_forecasting.py"
+```
+
+**Dependencias:** `pandas`, `numpy`, `matplotlib`, `seaborn`, `scipy`
+
 ## Prácticas
 
 | Práctica | Tema | Estado |
@@ -239,6 +267,6 @@ python "Practica 7/agrupamiento_de_datos.py"
 | 5 | Modelos Lineales y Correlación | ✅ Completada |
 | 6 | Clasificación KNN | ✅ Completada |
 | 7 | Clustering K-Means | ✅ Completada |
-| 8 | Forecasting | ⏳ Pendiente |
+| 8 | Forecasting | ✅ Completada |
 | 9 | Análisis de Texto | ⏳ Pendiente |
 | PIA | Reporte de Inteligencia de Negocios | ⏳ Pendiente |

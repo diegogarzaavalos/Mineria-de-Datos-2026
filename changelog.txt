@@ -101,3 +101,10 @@ Cambio: Agregar la Práctica 7 (K-Means): mismas tres variables numéricas de P6
 Justificación: Cumplir el entregable de Semana 12 (agrupamiento y evaluación) sin usar el género como etiqueta, y contrastar con P6 que esas variables agrupan por volumen y recepción, no por género.
 
 --------------------------------------------------------------------------------
+
+[2026-10-23 11:10 -0600]
+Archivo(s): Practica 8/pronostico_forecasting.py, README.md, changelog.txt
+Cambio: Agregar la Práctica 8 (pronóstico): serie de lanzamientos por año de release, regresión lineal entrenada en 2006-2022, R², predicción 2023-2025 y gráfica; 2023 no entra al ajuste por ser un año incompleto. Actualizar README (P8 completada).
+Justificación: Cumplir el entregable de Semana 13 (regresión/serie de tiempo para datos futuros) a partir de una serie agregada, porque cada fila del CSV es un juego y no un punto temporal.
+
+--------------------------------------------------------------------------------
