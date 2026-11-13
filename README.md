@@ -56,6 +56,9 @@ Mineria-de-Datos-2026/
 │   └── pronostico_forecasting.py
 ├── Practica 9/
 │   └── analisis_de_texto.py
+├── PIA/
+│   ├── PIA_Reporte_BI_Steam.pptx
+│   └── link_video_pia.md
 ├── changelog.txt
 └── README.md
 ```
@@ -296,4 +299,18 @@ python "Practica 9/analisis_de_texto.py"
 | 7 | Clustering K-Means | ✅ Completada |
 | 8 | Forecasting | ✅ Completada |
 | 9 | Análisis de Texto | ✅ Completada |
-| PIA | Reporte de Inteligencia de Negocios | ⏳ Pendiente |
+| PIA | Reporte de Inteligencia de Negocios | ✅ Presentación + guion |
+
+## PIA — Reporte de Inteligencia de Negocios
+
+**Carpeta:** `PIA/`  
+**Soporte visual:** `PIA/PIA_Reporte_BI_Steam.pptx` 
+**Video:** `link_video_pia.md`  
+
+**Tesis:** Steam tiene más juegos que nunca pero la misma atención. La oferta crece ~717 juegos/año, el 1% de los juegos concentra el 72% de las reseñas y la proporción de lanzamientos en el segmento de alta audiencia cayó de 94% (2013) a 19% (2022): hoy la mayoría termina en nicho. Dentro de ese mercado, género y motor cambian las probabilidades de llegar a alta audiencia (14%–49% según género).
+
+**Estructura:**
+- Acto 1 (problema): pronóstico de oferta, caída de atención por juego, concentración, tres mercados K-Means y su evolución, regresión reseñas↔pico.
+- Acto 2 (qué hacer): % de hits por género (+ KNN como contraste), perfil por motor, recomendaciones.
+
+**Técnicas avanzadas:** Clustering (P7) + Pronóstico (P8). Refuerzo: clasificación (P6) y texto (P9).

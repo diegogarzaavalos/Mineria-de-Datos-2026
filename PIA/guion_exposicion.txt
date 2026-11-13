@@ -1,0 +1,176 @@
+PIA — Guion de exposición
+Diego Garza Avalos · Individual
+Soporte: PIA/PIA_Reporte_BI_Steam.pptx 
+
+------------------------------------------------------------------------
+[SLIDE 1 · Portada]
+------------------------------------------------------------------------
+Hola, soy Diego Garza. Para este reporte trabajé con un conjunto de datos de
+casi sesenta mil juegos publicados en Steam, con sus fechas de lanzamiento,
+reseñas, picos de jugadores, géneros y tecnologías. La pregunta que me guió
+fue sencilla: ¿qué tan difícil es hoy que un juego encuentre a su público, y
+qué decisiones pueden mejorar esas probabilidades? Les voy a contar primero
+qué cambió en el mercado y después qué se puede hacer al respecto.
+
+
+------------------------------------------------------------------------
+[SLIDE 2 · Acto 1]
+------------------------------------------------------------------------
+Empecemos por el mercado.
+
+
+------------------------------------------------------------------------
+[SLIDE 3 · La oferta]
+------------------------------------------------------------------------
+Lo primero que salta a la vista es cuánto ha crecido la oferta. Hasta 2013
+se lanzaban unos cientos de juegos al año; en 2022 fueron cerca de once mil.
+Ajusté una regresión lineal sobre los años 2006 a 2022 y la tendencia es muy
+consistente, con un R cuadrado de 0.85: en promedio entran unos setecientos
+diecisiete juegos más cada año que el anterior. Si la tendencia se mantiene,
+para 2025 estaríamos hablando de alrededor de once mil doscientos
+lanzamientos. Dejé fuera 2023 porque los datos se recolectaron a mitad de
+ese año y el conteo está incompleto.
+
+Con tanta oferta nueva, la pregunta natural es si la atención de los
+jugadores creció al mismo ritmo.
+
+
+------------------------------------------------------------------------
+[SLIDE 4 · La atención]
+------------------------------------------------------------------------
+Y la respuesta es que no. La línea roja muestra la mediana de reseñas que
+recibe un juego según su año de lanzamiento. En 2013 un juego típico tenía
+alrededor de mil cuatrocientas reseñas; para 2022 son dieciséis. Mientras
+las barras de lanzamientos suben, la atención por juego se desploma.
+
+Lo interesante es que esto no parece un problema de calidad: el porcentaje
+de reseñas positivas de un juego típico subió de 74 a 85 por ciento en ese
+mismo periodo. Hay que tomar en cuenta que los juegos más antiguos han tenido
+más tiempo para acumular reseñas, pero una caída de ese tamaño no se explica
+solo por eso.
+
+
+------------------------------------------------------------------------
+[SLIDE 5 · La concentración]
+------------------------------------------------------------------------
+Además, la atención no se reparte de forma pareja. Si ordenamos todos los
+juegos por número de reseñas, el uno por ciento de arriba concentra el 72 por
+ciento de todas las reseñas del catálogo. El noventa por ciento de los juegos
+se reparte apenas un 4.5 por ciento. Es un mercado donde unos pocos títulos
+se llevan casi toda la visibilidad.
+
+
+------------------------------------------------------------------------
+[SLIDE 6 · Tres mercados · Clustering]
+------------------------------------------------------------------------
+Para entender mejor qué tipos de juegos conviven en este mercado, apliqué
+K-Means usando solo tres variables de desempeño: reseñas, pico de jugadores
+y porcentaje positivo. No le di el género al modelo. Con el método del codo y
+el coeficiente de silhouette elegí tres grupos, y cada uno tiene una lectura
+de negocio clara.
+
+El primero, que llamo de alta audiencia, reúne al 27 por ciento de los
+juegos: cientos de reseñas, picos de jugadores altos y buena recepción. El
+segundo, el más grande con el 52 por ciento, es un nicho bien recibido:
+juegos con poca audiencia pero con alrededor de 86 por ciento de reseñas
+positivas. Y el tercero, con el 21 por ciento, es un nicho mal recibido:
+poca audiencia y recepción baja.
+
+
+------------------------------------------------------------------------
+[SLIDE 7 · Hallazgo central]
+------------------------------------------------------------------------
+Lo más revelador aparece cuando vemos cómo cambia esa mezcla con el tiempo.
+En 2013, el 94 por ciento de los juegos que se lanzaban terminaba en el
+segmento de alta audiencia; en 2022 es solo el 19 por ciento. Hay que
+matizar que antes de 2014 Steam era una tienda curada, con pocos lanzamientos
+seleccionados, así que esos primeros años son un caso especial. Pero desde
+que la tienda se abrió, la tendencia es clara: hoy la mayoría de los
+lanzamientos termina en nicho.
+
+Y el segmento que más creció no es el de juegos mal recibidos, sino el nicho
+bien recibido. Es decir, hay cada vez más juegos bien valorados por quienes
+los juegan, pero con una audiencia pequeña. Ese es, para mí, el hallazgo
+central de este análisis: el reto en Steam ya no es tanto hacer un buen
+juego, sino lograr que lo encuentren.
+
+
+------------------------------------------------------------------------
+[SLIDE 8 · Por qué pasa · Regresión]
+------------------------------------------------------------------------
+¿Por qué se concentra tanto la atención? Una pista está en la relación entre
+reseñas y jugadores. En escala logarítmica, el número de reseñas y el pico de
+jugadores simultáneos tienen una correlación de 0.86, y las reseñas explican
+cerca de tres cuartas partes de la variación del pico. Esto sugiere un ciclo
+que se retroalimenta: más reseñas dan más visibilidad, la visibilidad atrae
+jugadores y los jugadores generan más reseñas. Es una asociación, no una
+prueba de causa, pero es coherente con lo que vimos en la concentración.
+
+
+------------------------------------------------------------------------
+[SLIDE 9 · Acto 2]
+------------------------------------------------------------------------
+Entonces, si alguien va a lanzar un juego en este mercado, ¿dónde están las
+mejores probabilidades?
+
+
+------------------------------------------------------------------------
+[SLIDE 10 · Género]
+------------------------------------------------------------------------
+Un primer factor es el género. Esta gráfica muestra qué porcentaje de los
+juegos de cada género termina en el segmento de alta audiencia. El promedio
+general es 27 por ciento, pero Free to Play llega a 49, Strategy a 40 y RPG a
+39. En el otro extremo, Indie queda en 21 y Casual en 14. Es decir, un juego
+Free to Play tiene unas 3.4 veces más probabilidades de alcanzar una
+audiencia alta que uno Casual. Y vale la pena notar que Indie y Casual son
+justamente los géneros con más oferta.
+
+Ahora, esto no quiere decir que el género determine el resultado. También
+entrené un clasificador KNN para ver si podía adivinar el género de un juego
+a partir de su desempeño, y acertó el 26 por ciento de las veces, menos que
+si simplemente dijera siempre "Indie", que acierta el 28. Así que el género
+no define el éxito, pero sí inclina las probabilidades.
+
+
+------------------------------------------------------------------------
+[SLIDE 11 · Motor]
+------------------------------------------------------------------------
+Un segundo factor es la tecnología. A partir del texto de tecnologías
+detectadas en cada juego extraje el motor con el que fue desarrollado y lo
+crucé con los mismos tres segmentos. Los perfiles son distintos: en Godot, el
+75 por ciento de los juegos queda en el nicho bien recibido, mientras que
+Unreal tiene la proporción más alta de juegos mal recibidos, con 28 por
+ciento. Los juegos sin un motor comercial detectado tienen más casos de alta
+audiencia, probablemente porque muchos vienen de estudios grandes con motor
+propio. Aquí también hay que ser cuidadosos: el motor refleja el tipo de
+estudio y de proyecto, no es la causa directa del resultado.
+
+
+------------------------------------------------------------------------
+[SLIDE 12 · Recomendaciones]
+------------------------------------------------------------------------
+Con todo esto, propongo tres recomendaciones. La primera es medir el éxito
+según el segmento: si el uno por ciento se lleva el 72 por ciento de la
+atención, que un juego quede en el nicho bien recibido es un resultado sano,
+no un fracaso. La segunda es elegir el género con datos: Strategy, RPG y Free
+to Play tienen más del doble de probabilidad de alcanzar audiencia alta que
+Casual, mientras que Indie y Casual son los mercados más saturados. Y la
+tercera es invertir en visibilidad desde el lanzamiento, porque reseñas y
+jugadores se retroalimentan, y las primeras reseñas son probablemente el
+activo más valioso de un juego nuevo.
+
+En pocas palabras: no hay que dejar de buscar el gran éxito, pero tampoco
+medirse solo contra él.
+
+
+------------------------------------------------------------------------
+[SLIDE 13 · Cierre]
+------------------------------------------------------------------------
+Para cerrar, lo que encontré es que la oferta en Steam crece unos setecientos
+juegos por año, que la atención se concentra en el uno por ciento de los
+títulos, que hoy la mayoría de los lanzamientos termina en nicho, y que el
+género y el motor sí cambian las probabilidades de alcanzar una audiencia
+grande. Como limitaciones, los juegos antiguos han tenido más tiempo para
+acumular reseñas, y los primeros años de Steam fueron de una tienda curada.
+Muchas gracias.
+
